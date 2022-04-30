@@ -17,7 +17,9 @@ deploy:
     bucket_name: "elasticbeanstalk-ap-south-1-024845823797"
     bucket_path: "docker-react"
     on:
-        branch:master
+        branches:
+        only: 
+            - master
     access_key_id: $id
     secret_access_key: 
         secure: "$key"

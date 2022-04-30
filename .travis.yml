@@ -1,0 +1,10 @@
+language: generic
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t myFirstTravis/docker-react -f Dockerfile.dev .
+
+script:
+    - docker run -e CI=true myFirstTravis/docker-react npm run test
